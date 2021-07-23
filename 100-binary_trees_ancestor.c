@@ -1,5 +1,7 @@
 #include "binary_trees.h"
 
+size_t binary_tree_depth_ad(const binary_tree_t *tree);
+
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
 {
 
@@ -9,8 +11,8 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 	binary_tree_t *aux_first = (binary_tree_t *)first;
 	binary_tree_t *aux_second = (binary_tree_t *)second;
 
-	int first_d = binary_tree_depth(first);
-	int second_d = binary_tree_depth(second);
+	int first_d = binary_tree_depth_ad(first);
+	int second_d = binary_tree_depth_ad(second);
 
 	for (; first_d != second_d;)
 	{
@@ -41,7 +43,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
  * ------------------------------------
  * Return: the dept
  */
-size_t binary_tree_depth(const binary_tree_t *tree)
+size_t binary_tree_depth_ad(const binary_tree_t *tree)
 {
 	int i;
 	binary_tree_t *aux = (binary_tree_t *)tree;
